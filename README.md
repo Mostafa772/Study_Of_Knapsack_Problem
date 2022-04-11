@@ -30,11 +30,16 @@ As there are redundant subproblems.
 Auxiliary Space :O(1). 
 As no extra data structure has been used for storing values.
 
-
 ### Dynamic Programming
-Complexity Analysis: 
 
-## Greedy 
+Complexity Analysis: 
+Time Complexity: O(N*W). 
+where ‘N’ is the number of weight element and ‘W’ is capacity. As for every weight element we traverse through all weight capacities 1<=w<=W.
+Auxiliary Space: O(N*W). 
+The use of 2-D array of size ‘N*W’.
+
+### Greedy 
+
 This solution works perfectly for fractional Knapsack problem whereas It won't always give
 the optimal solution in the case of 0/1 Knapsack problem. The idea is to find the object with 
 heighest profit to weight ratio and put in the bag and if the bag doesn't fit the whole object 
@@ -43,7 +48,4 @@ in the worst case using binary search to do this will require Log(N) each time s
 Time complixity: O(NLog(N)) 
 Where N is the length of the array. 
 
-Time Complexity: O(N*W). 
-where ‘N’ is the number of weight element and ‘W’ is capacity. As for every weight element we traverse through all weight capacities 1<=w<=W.
-Auxiliary Space: O(N*W). 
-The use of 2-D array of size ‘N*W’.
+
