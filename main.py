@@ -88,6 +88,10 @@ class DynamicProgramming(Knapsack):
 class GreedySolution(Knapsack):
 
     def solution(self):
+        
+        if sum(self.items_weight) < self.max_weight:
+            return sum(self.items_profit)
+        
         weight_to_profit = [(p / w) for w, p in zip(self.items_weight, self.items_profit)]
         sum_of_weight = 0
         max_profit = 0
