@@ -26,19 +26,11 @@ def get_input():
 
 class Knapsack:
 
-    def __init__(self, init_max_items, init_max_weight):
-        self.items_profit = []
-        self.items_weight = []
+    def __init__(self, init_max_items, init_max_weight, items_weights, items_profits):
+        self.items_weight = items_weights
+        self.items_profit = items_profits
         self.max_weight = init_max_weight
         self.max_items = init_max_items
-
-        print("please enter the weight for each of the " + str(self.max_items) + "th item")
-        for i in range(self.max_items):
-            self.items_weight.append(get_input())
-
-        print("please enter the profit for each of the " + str(self.max_items) + "th item")
-        for i in range(self.max_items):
-            self.items_profit.append(get_input())
 
     def __str__(self):
         return f"""The number of items we have is: {str(self.max_items)} and the max_weight of the knapsack is: {str(self.max_weight)} 
@@ -52,15 +44,16 @@ and the items have the weights of {self.items_weight} and profit of {self.items_
 class BruteForce(Knapsack):
 
     def solution(self):
-        max_amount = 0
+
+        max_profit = 0
 
         for p, w in zip(powerset(self.items_profit), powerset(self.items_weight)):
             if sum(w) > self.max_weight or len(w) > self.max_items:
                 continue
-            elif sum(p) > max_amount:
-                max_amount = sum(p)
+            elif sum(p) > max_profit:
+                max_profit = sum(p)
 
-        return max_amount
+        return max_profit
 
 
 class DynamicProgramming(Knapsack):
@@ -73,7 +66,6 @@ class DynamicProgramming(Knapsack):
             j = 0
 
             while j < self.max_weight + 1:
-
                 if i == 0 or j == 0:
                     table[i][j] = 0
 
