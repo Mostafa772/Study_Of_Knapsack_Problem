@@ -48,5 +48,5 @@ in the worst case using binary search to do this will require Log(N) each time s
 Time complixity: O(NLog(N)) 
 Where N is the length of the array. 
 
-[plot](images/figure_1.png)
+[plot](figure_1.png)
 
