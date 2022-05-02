@@ -47,6 +47,5 @@ put part of it such that it fits, so we will be looking for the maximal p/w valu
 in the worst case using binary search to do this will require Log(N) each time so we will have:
 Time complixity: O(NLog(N)) 
 Where N is the length of the array. 
-
-[plot](images/Figure_1.png)
+![plot](images/Figure_1.png)
 
